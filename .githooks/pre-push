@@ -1,0 +1,4 @@
+#!/bin/sh
+# 公开仓库推送前检查。启用：git config core.hooksPath .githooks
+set -e
+python tools/check_public_tree.py

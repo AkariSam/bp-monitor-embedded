@@ -1,0 +1,41 @@
+# Secrets
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+*.jks
+*.keystore
+key.properties
+secrets.*
+*_secret.*
+llm_config*.dart
+
+# Temporary / caches
+tmp/
+**/__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+*.log
+.DS_Store
+
+# Generated algorithm data and output
+algo/data/sim/*
+!algo/data/sim/.gitkeep
+algo/data/real/*
+!algo/data/real/.gitkeep
+algo/out/*
+!algo/out/.gitkeep
+algo/c/build/
+
+# Generated firmware demo output
+firmware/demo/out/
+
+# APP / packaging artifacts
+app/
+*.apk
+*.aab
+build/
