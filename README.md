@@ -11,7 +11,8 @@
 - `algo/`：PC 算法参考实现、仿真器、测试与数据生成脚本；
 - `docs/interfaces/ble-gatt-protocol.md`：BLE GATT v1.0 设计冻结正本；
 - `docs/history.md`：项目历史节点；
-- `docs/status.md`：已验证 / 未验证 / 已知边界。
+- `docs/status.md`：已验证 / 未验证 / 已知边界；
+- `firmware/docs/ble-bench.md`：Phase 2A Pico 2W 合成数据 BLE bench 说明。
 
 APP 在独立仓库维护，本仓库不包含 APP、APK 或手机端代码。
 
