@@ -16,6 +16,9 @@
 - **耗时**：`time.perf_counter()`，每个规模重复 20 次取中位数；设备倍率按
   ×50（乐观）与 ×100（保守）估算。阶段预算沿用 tech-plan §4.1 的 250 ms。
   PC 计时为墙钟时间，重复运行的中位数约 ±10%（受机器负载影响）。
+- **CI 口径**：共享 CI runner 的墙钟时间噪声更大，`act4` 在 `CI=true` 时只做
+  500 ms 粗筛；250 ms 硬门槛在本地或目标硬件上执行，设置 `BUDGET_STRICT=1`
+  可强制 CI 也按 250 ms 断言。
 - 200 KiB 为保守堆预算（Pico 2 W MicroPython 实际可用堆通常更大，但按最坏情况规划）。
 
 ## 1. DeflateBuffer(9600) 实际占用
@@ -154,9 +157,8 @@ MicroPython 估算的静态峰值 127.6 KiB 已计入块阈值与候选列表，
 
 ## 8. 复现
 
-在仓库根目录运行：
-
 ```bash
+cd BloodPressureMonitor
 PYTHONIOENCODING=utf-8 PYTHONDONTWRITEBYTECODE=1 \
   python firmware/scripts/budget.py
 ```
